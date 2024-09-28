@@ -1,2 +1,3 @@
-# royalvnc-demo
-Demo clients for RoyalVNC
+# Royal VNC Demos
+
+Demo clients for [RoyalVNC](https://github.com/royalapplications/royalvnc)
