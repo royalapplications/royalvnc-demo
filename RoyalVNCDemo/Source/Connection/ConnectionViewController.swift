@@ -269,34 +269,34 @@ extension ConnectionViewController: VNCConnectionDelegate {
 					credentialFor authenticationType: VNCAuthenticationType,
 					completion: @escaping (VNCCredential?) -> Void) {
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self else {
+			guard let self else {
 				completion(nil)
 				
 				return
 			}
 			
-			strongSelf.credentialFor(authenticationType: authenticationType,
-									 completion: completion)
+            self.credentialFor(authenticationType: authenticationType,
+                               completion: completion)
 		}
 	}
 	
 	func connection(_ connection: VNCConnection,
 					didCreateFramebuffer framebuffer: VNCFramebuffer) {
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self else { return }
+			guard let self else { return }
 			
-			strongSelf.createFramebufferView(connection: connection,
-											 framebuffer: framebuffer)
+            self.createFramebufferView(connection: connection,
+                                       framebuffer: framebuffer)
 		}
 	}
 	
 	func connection(_ connection: VNCConnection,
 					didResizeFramebuffer framebuffer: VNCFramebuffer) {
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self else { return }
+			guard let self else { return }
 			
-			strongSelf.createFramebufferView(connection: connection,
-											 framebuffer: framebuffer)
+            self.createFramebufferView(connection: connection,
+                                       framebuffer: framebuffer)
 		}
 	}
 	

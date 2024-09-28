@@ -302,17 +302,17 @@ extension ConfigurationViewController: VNCConnectionDelegate {
 		}
 		
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self else { return }
+			guard let self else { return }
 			
-			strongSelf.statusImage = statusImage
-			strongSelf.statusText = statusText
+            self.statusImage = statusImage
+            self.statusText = statusText
 			
-			strongSelf.connectButtonText = buttonText
-			strongSelf.connectButtonIsEnabled = buttonEnabled
+            self.connectButtonText = buttonText
+            self.connectButtonIsEnabled = buttonEnabled
 			
 			if destroyConnection {
-				strongSelf.destroyFramebufferView()
-				strongSelf.destroyConnection()
+                self.destroyFramebufferView()
+                self.destroyConnection()
 			}
 		}
 	}
@@ -321,8 +321,8 @@ extension ConfigurationViewController: VNCConnectionDelegate {
 					credentialFor authenticationType: VNCAuthenticationType,
 					completion: @escaping (VNCCredential?) -> Void) {
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self,
-				  let storyboard = strongSelf.storyboard else {
+			guard let self,
+				  let storyboard = self.storyboard else {
 				completion(nil)
 				
 				return
@@ -343,10 +343,10 @@ extension ConfigurationViewController: VNCConnectionDelegate {
 			viewController.modalPresentationStyle = .overCurrentContext
 			viewController.modalTransitionStyle = .crossDissolve
 			
-			strongSelf.credentialViewController = viewController
+            self.credentialViewController = viewController
 			
 			viewController.completion = { credential in
-				strongSelf.credentialViewController = nil
+                self.credentialViewController = nil
 				
 				if let credential = credential {
 					if let userPassCred = credential as? VNCUsernamePasswordCredential {
@@ -367,18 +367,18 @@ extension ConfigurationViewController: VNCConnectionDelegate {
 				completion(credential)
 			}
 			
-			strongSelf.present(viewController,
-							   animated: true)
+            self.present(viewController,
+                         animated: true)
 		}
 	}
 	
 	func connection(_ connection: VNCConnection,
 					didCreateFramebuffer framebuffer: VNCFramebuffer) {
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self else { return }
+			guard let self else { return }
 			
-			strongSelf.createFramebufferViewController(size: framebuffer.size.cgSize,
-													   isScalingEnabled: connection.settings.isScalingEnabled)
+            self.createFramebufferViewController(size: framebuffer.size.cgSize,
+                                                 isScalingEnabled: connection.settings.isScalingEnabled)
 		}
 	}
 	

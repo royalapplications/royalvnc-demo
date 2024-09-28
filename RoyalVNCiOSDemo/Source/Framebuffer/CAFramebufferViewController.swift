@@ -114,9 +114,9 @@ extension CAFramebufferViewController {
 		let cgImage = framebuffer.cgImage
 		
 		DispatchQueue.main.async { [weak self] in
-			guard let strongSelf = self else { return }
+			guard let self else { return }
 			
-			let layer = strongSelf.view.layer
+			let layer = self.view.layer
 			
 			layer.contents = cgImage
 		}
