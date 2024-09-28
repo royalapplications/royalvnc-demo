@@ -12,15 +12,12 @@
       location = "group:.swiftlint.yml">
    </FileRef>
    <FileRef
-      location = "group:../royalvnc">
-   </FileRef>
-   <FileRef
       location = "group:RoyalVNCDemo/RoyalVNCDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RoyalVNCObjCDemo/RoyalVNCObjCDemo.xcodeproj">
+      location = "group:RoyalVNCiOSDemo/RoyalVNCiOSDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RoyalVNCiOSDemo/RoyalVNCiOSDemo.xcodeproj">
+      location = "group:RoyalVNCObjCDemo/RoyalVNCObjCDemo.xcodeproj">
    </FileRef>
 </Workspace>
