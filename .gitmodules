@@ -1,0 +1,3 @@
+[submodule "royalvnc"]
+	path = royalvnc
+	url = https://github.com/royalapplications/royalvnc.git

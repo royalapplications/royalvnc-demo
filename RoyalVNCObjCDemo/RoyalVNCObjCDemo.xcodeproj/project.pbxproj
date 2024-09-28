@@ -14,9 +14,9 @@
 		E742BD2B290191D7007D23D5 /* ConfigurationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E742BD2A290191D7007D23D5 /* ConfigurationWindow.xib */; };
 		E742BD2E290191EB007D23D5 /* ConfigurationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E742BD2D290191EB007D23D5 /* ConfigurationWindowController.m */; };
 		E742BD322901942B007D23D5 /* ConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E742BD312901942B007D23D5 /* ConfigurationViewController.m */; };
-		E75FD82D2CA8222F00FD11A2 /* RoyalVNCKit in Frameworks */ = {isa = PBXBuildFile; productRef = E75FD82C2CA8222F00FD11A2 /* RoyalVNCKit */; };
-		E75FD82E2CA8223400FD11A2 /* RoyalVNCKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E75FD82C2CA8222F00FD11A2 /* RoyalVNCKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E77D15B4290C175D000FDDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77D15B3290C175D000FDDC4 /* Assets.xcassets */; };
+		E780EBDB2CA8277A006E3F62 /* RoyalVNCKit in Frameworks */ = {isa = PBXBuildFile; productRef = E780EBDA2CA8277A006E3F62 /* RoyalVNCKit */; };
+		E780EBDC2CA8277A006E3F62 /* RoyalVNCKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E780EBDA2CA8277A006E3F62 /* RoyalVNCKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E79EBE282902B5460013A7E4 /* ConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79EBE272902B5460013A7E4 /* ConfigurationView.xib */; };
 		E79EBE2D2902B5CC0013A7E4 /* EncodingsConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79EBE2C2902B5CC0013A7E4 /* EncodingsConfigurationViewController.m */; };
 		E79EBE2E2902B8760013A7E4 /* EncodingsConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79EBE1F2902B4C10013A7E4 /* EncodingsConfigurationView.xib */; };
@@ -34,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E75FD82E2CA8223400FD11A2 /* RoyalVNCKit in Embed Frameworks */,
+				E780EBDC2CA8277A006E3F62 /* RoyalVNCKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75FD82D2CA8222F00FD11A2 /* RoyalVNCKit in Frameworks */,
+				E780EBDB2CA8277A006E3F62 /* RoyalVNCKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +215,6 @@
 			);
 			mainGroup = E742BCFC29018431007D23D5;
 			packageReferences = (
-				E75FD82B2CA8222F00FD11A2 /* XCRemoteSwiftPackageReference "royalvnc" */,
 			);
 			productRefGroup = E742BD0629018431007D23D5 /* Products */;
 			projectDirPath = "";
@@ -466,21 +465,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		E75FD82B2CA8222F00FD11A2 /* XCRemoteSwiftPackageReference "royalvnc" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/royalapplications/royalvnc.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		E75FD82C2CA8222F00FD11A2 /* RoyalVNCKit */ = {
+		E780EBDA2CA8277A006E3F62 /* RoyalVNCKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E75FD82B2CA8222F00FD11A2 /* XCRemoteSwiftPackageReference "royalvnc" */;
 			productName = RoyalVNCKit;
 		};
 /* End XCSwiftPackageProductDependency section */

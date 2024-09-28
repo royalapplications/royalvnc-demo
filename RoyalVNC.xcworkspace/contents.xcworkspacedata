@@ -12,6 +12,9 @@
       location = "group:.swiftlint.yml">
    </FileRef>
    <FileRef
+      location = "group:royalvnc">
+   </FileRef>
+   <FileRef
       location = "group:RoyalVNCDemo/RoyalVNCDemo.xcodeproj">
    </FileRef>
    <FileRef
