@@ -13,8 +13,9 @@ protocol FramebufferViewController: UIViewController {
 	
 	var framebufferViewControllerDelegate: FramebufferViewControllerDelegate? { get set }
 	
-	func framebuffer(_ framebuffer: VNCFramebuffer,
-					 didUpdateRegion updatedRegion: CGRect)
+    func framebufferDidUpdate(_ framebuffer: VNCFramebuffer,
+                              x: UInt16, y: UInt16,
+                              width: UInt16, height: UInt16)
 }
 
 extension FramebufferViewController {

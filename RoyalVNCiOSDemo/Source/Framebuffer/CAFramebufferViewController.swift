@@ -108,19 +108,20 @@ extension CAFramebufferViewController {
 			view.layer.contentsGravity = .resizeAspect
 		}
 	}
-	
-	func framebuffer(_ framebuffer: VNCFramebuffer,
-					 didUpdateRegion updatedRegion: CGRect) {
-		let cgImage = framebuffer.cgImage
-		
-		DispatchQueue.main.async { [weak self] in
-			guard let self else { return }
-			
-			let layer = self.view.layer
-			
-			layer.contents = cgImage
-		}
-	}
+    
+    func framebufferDidUpdate(_ framebuffer: VNCFramebuffer,
+                              x: UInt16, y: UInt16,
+                              width: UInt16, height: UInt16) {
+        let cgImage = framebuffer.cgImage
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            
+            let layer = self.view.layer
+            
+            layer.contents = cgImage
+        }
+    }
 }
 
 extension CAFramebufferViewController: UITextFieldDelegate {

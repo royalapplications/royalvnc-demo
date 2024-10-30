@@ -299,14 +299,16 @@ extension ConnectionViewController: VNCConnectionDelegate {
                                        framebuffer: framebuffer)
 		}
 	}
-	
-	func connection(_ connection: VNCConnection,
-					framebuffer: VNCFramebuffer,
-					didUpdateRegion updatedRegion: CGRect) {
-		framebufferView?.connection(connection,
-									framebuffer: framebuffer,
-									didUpdateRegion: updatedRegion)
-	}
+    
+    func connection(_ connection: VNCConnection,
+                    didUpdateFramebuffer framebuffer: VNCFramebuffer,
+                    x: UInt16, y: UInt16,
+                    width: UInt16, height: UInt16) {
+        framebufferView?.connection(connection,
+                                    didUpdateFramebuffer: framebuffer,
+                                    x: x, y: y,
+                                    width: width, height: height)
+    }
 	
 	func connection(_ connection: VNCConnection,
 					didUpdateCursor cursor: VNCCursor) {
