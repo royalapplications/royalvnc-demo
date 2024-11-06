@@ -312,12 +312,15 @@
 	});
 }
 
-- (void)connection:(VNCConnection*)connection
-	   framebuffer:(VNCFramebuffer*)framebuffer
-   didUpdateRegion:(CGRect)updatedRegion {
-	[self.framebufferView connection:connection
-						 framebuffer:framebuffer
-					 didUpdateRegion:updatedRegion];
+- (void)connection:(VNCConnection *)connection didUpdateFramebuffer:(VNCFramebuffer *)framebuffer
+                 x:(uint16_t)x y:(uint16_t)y
+             width:(uint16_t)width height:(uint16_t)height {
+    [self.framebufferView connection:connection
+                didUpdateFramebuffer:framebuffer
+                                   x:x
+                                   y:y
+                               width:width
+                              height:height];
 }
 
 - (void)connection:(VNCConnection*)connection

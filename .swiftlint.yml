@@ -44,7 +44,7 @@ function_parameter_count: 8
 cyclomatic_complexity: 16
 
 identifier_name:
-  min_length: 2
+  min_length: 1
   max_length: 60
   allowed_symbols: [
     _
