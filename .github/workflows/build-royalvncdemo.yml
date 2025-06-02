@@ -17,9 +17,6 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: Select Xcode
-        run: sudo xcode-select --switch /Applications/Xcode_16.0.app
-      
       - name: Get Xcode Version
         run: xcodebuild -version
 
