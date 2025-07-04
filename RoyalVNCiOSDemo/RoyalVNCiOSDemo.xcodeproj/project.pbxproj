@@ -83,13 +83,6 @@
 			path = Credential;
 			sourceTree = "<group>";
 		};
-		E7B3136F28E5DE2000C40684 /* Connection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Connection;
-			sourceTree = "<group>";
-		};
 		E7B3137028E5DE2600C40684 /* Framebuffer */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B3137028E5DE2600C40684 /* Framebuffer */,
-				E7B3136F28E5DE2000C40684 /* Connection */,
 				E7B3136E28E5DE1300C40684 /* Credential */,
 				E7B3136D28E5DE0D00C40684 /* Configuration */,
 				E7ED9E8D28DDD0C500F1BF80 /* AppDelegate.swift */,
