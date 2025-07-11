@@ -144,6 +144,8 @@ private extension ConfigurationViewController {
 					popupButtonColorDepth.selectItem(at: 1)
 				case .depth24Bit:
 					popupButtonColorDepth.selectItem(at: 2)
+                @unknown default:
+                    fatalError("Unknown color depth: \(newValue)")
 			}
 		}
 	}
