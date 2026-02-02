@@ -85,9 +85,12 @@ private extension ConnectionViewController {
 		let rect = CGRect(origin: .zero,
 						  size: viewSize)
 		
-		let view = VNCCAFramebufferView(frame: rect,
-										framebuffer: framebuffer,
-										connection: connection)
+        let view = VNCCAFramebufferView(
+            frame: rect,
+            framebuffer: framebuffer,
+            connection: connection,
+            connectionDelegate: self
+        )
 		
 		if isScalingEnabled {
 			view.autoresizingMask = [
@@ -115,7 +118,11 @@ private extension ConnectionViewController {
 	}
 	
 	func destroyFramebufferView() {
-		guard let framebufferView = framebufferView else { return }
+        guard let framebufferView else {
+            return
+        }
+        
+        connection.delegate = self
 		
 		framebufferView.removeFromSuperview()
 		
@@ -300,19 +307,17 @@ extension ConnectionViewController: VNCConnectionDelegate {
 		}
 	}
     
+    // NOTE: Should never be called as it's handled directly by the VNCFramebufferView implementation
     func connection(_ connection: VNCConnection,
                     didUpdateFramebuffer framebuffer: VNCFramebuffer,
                     x: UInt16, y: UInt16,
                     width: UInt16, height: UInt16) {
-        framebufferView?.connection(connection,
-                                    didUpdateFramebuffer: framebuffer,
-                                    x: x, y: y,
-                                    width: width, height: height)
+        
     }
 	
+    // NOTE: Should never be called as it's handled directly by the VNCFramebufferView implementation
 	func connection(_ connection: VNCConnection,
 					didUpdateCursor cursor: VNCCursor) {
-		framebufferView?.connection(connection,
-									didUpdateCursor: cursor)
+        
 	}
 }

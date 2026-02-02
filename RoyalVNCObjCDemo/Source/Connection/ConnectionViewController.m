@@ -81,9 +81,10 @@
 	CGRect rect = CGRectMake(0, 0,
 							 viewSize.width, viewSize.height);
 	
-	VNCCAFramebufferView* view = [[VNCCAFramebufferView alloc] initWithFrame:rect
-																 framebuffer:framebuffer
-																  connection:connection];
+    VNCCAFramebufferView* view = [[VNCCAFramebufferView alloc] initWithFrame:rect
+                                                                 framebuffer:framebuffer
+                                                                  connection:connection
+                                                          connectionDelegate:self];
 	
 	if (isScalingEnabled) {
 		view.autoresizingMask = NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin | NSViewWidthSizable | NSViewHeightSizable;
@@ -110,6 +111,8 @@
 	if (!self.framebufferView) {
 		return;
 	}
+    
+    self.connection.delegate = self;
 	
 	[(NSView*)self.framebufferView removeFromSuperview];
 	self.framebufferView = nil;
@@ -312,21 +315,17 @@
 	});
 }
 
+// NOTE: Should never be called as it's handled directly by the VNCFramebufferView implementation
 - (void)connection:(VNCConnection *)connection didUpdateFramebuffer:(VNCFramebuffer *)framebuffer
                  x:(uint16_t)x y:(uint16_t)y
              width:(uint16_t)width height:(uint16_t)height {
-    [self.framebufferView connection:connection
-                didUpdateFramebuffer:framebuffer
-                                   x:x
-                                   y:y
-                               width:width
-                              height:height];
+    
 }
 
+// NOTE: Should never be called as it's handled directly by the VNCFramebufferView implementation
 - (void)connection:(VNCConnection*)connection
    didUpdateCursor:(VNCCursor*)cursor {
-	[self.framebufferView connection:connection
-					 didUpdateCursor:cursor];
+	
 }
 
 @end
